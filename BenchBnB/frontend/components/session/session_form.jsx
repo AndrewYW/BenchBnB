@@ -25,11 +25,11 @@ class SessionForm extends React.Component {
     return (
       <div>
         <h2>{this.props.formType.upcase}</h2>
-        <form action="">
-          <label htmlFor="">Username:
+        <form>
+          <label>Username:
             <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
           </label>
-          <label htmlFor="">Password:
+          <label>Password:
             <input type="text" value={this.state.password} onChange={this.handleChange('password')} />
           </label>
           <input type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
