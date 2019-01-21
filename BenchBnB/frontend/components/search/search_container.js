@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import { fetchBenches } from "../actions/bench_actions";
+import { fetchBenches } from "../../actions/bench_actions";
 
 const mstp = state => ({
   benches: state.entities.benches,
