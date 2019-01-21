@@ -2,6 +2,9 @@ class Api::BenchesController < ApplicationController
 
   def index
     @benches = bounds ? Bench.in_bounds(bounds) : Bench.all
+    # puts 'askjlasdffasd'
+    # puts params
+    # puts Bench.in_bounds(bounds)
     render json: @benches
   end
 
