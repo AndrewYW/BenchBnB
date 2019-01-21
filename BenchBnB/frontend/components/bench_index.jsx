@@ -6,23 +6,27 @@ class BenchIndex extends React.Component {
     this.props.fetchBenches();
   }
 
-  render() {
-    const {benches} = this.props;
-    return (
-      <div>
-        <ul>
-          {
-            Object.values(benches).map(bench => (
-              <BenchIndexItem
-              key={`Bench: ${bench.id}`}
-              bench={bench} />
+  render() {    
+    if (this.props) {
+      const { benches } = this.props;
+      return (
+        <div>
+          <ul>
+            {
+              Object.values(benches).map(bench => (
+                <BenchIndexItem
+                  key={`Bench: ${bench.id}`}
+                  bench={bench} />
               )
-            )
-          }
-        </ul>
-      </div>
-    )
-
+              )
+            }
+          </ul>
+        </div>
+      )
+    } else {
+      return null;
+    }
+  
   }
 };
 
