@@ -2,7 +2,7 @@ class Api::BenchesController < ApplicationController
 
   def index
     @benches = Bench.all
-    render :index
+    render json: @benches
   end
 
   def create
