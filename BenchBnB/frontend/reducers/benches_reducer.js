@@ -12,7 +12,6 @@ const benchesReducer = (state = {}, action) => {
       Object.values(action.benches).forEach(bench => {
         newState[bench.id] = bench;
       });
-      debugger
       return newState;
     default:
       return state;
