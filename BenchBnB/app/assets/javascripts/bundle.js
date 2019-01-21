@@ -577,11 +577,30 @@ function (_React$Component) {
   }
 
   _createClass(BenchMap, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // set the map to show SF
+      var mapOptions = {
+        center: {
+          lat: 37.7758,
+          lng: -122.435
+        },
+        // this is SF
+        zoom: 13
+      }; // wrap this.mapNode in a Google Map
+
+      this.map = new google.maps.Map(this.mapNode, mapOptions);
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "map-container",
-        ref: "map"
+        ref: function ref(map) {
+          return _this.mapNode = map;
+        }
       });
     }
   }]);
@@ -613,7 +632,9 @@ __webpack_require__.r(__webpack_exports__);
 var Search = function Search(_ref) {
   var benches = _ref.benches,
       fetchBenches = _ref.fetchBenches;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_map__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_index__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_map__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    benches: benches
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_bench_index__WEBPACK_IMPORTED_MODULE_1__["default"], {
     benches: benches,
     fetchBenches: fetchBenches
   }));
